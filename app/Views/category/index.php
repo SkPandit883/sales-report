@@ -23,6 +23,8 @@
                 </div>
                 <div class="card-body">
                     <form action="<?= base_url('category') ?>" method="post">
+                        <?= csrf_field() ?>
+
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                             <div class="col-sm-8 space-x-6 d-flex">
@@ -79,6 +81,8 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form method="post" action="<?= base_url('category/update/' . $id) ?>">
+                                                        <?= csrf_field() ?>
+
                                                         <div class="row mb-3">
                                                             <label class="col-sm-2 col-form-label" for="basic-default-name">Category</label>
                                                             <div class="col-sm-12 space-x-6 d-flex">

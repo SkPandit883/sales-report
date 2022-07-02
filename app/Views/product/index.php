@@ -17,6 +17,7 @@
         <div class="modal-body">
           <div class="card-body">
             <form method="post" action="<?= base_url('product') ?>" enctype="multipart/form-data">
+              <?= csrf_field() ?>
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-name">Product Name</label>
                 <div class="col-sm-10">
@@ -49,7 +50,7 @@
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-message">Description</label>
                 <div class="col-sm-10">
-                  <textarea id="basic-default-message" name="description" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?" aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2"></textarea>
+                  <textarea id="basic-default-message" name="description" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?" aria-label=" Description about products" aria-describedby="basic-icon-default-message2"></textarea>
                 </div>
               </div>
 
@@ -114,7 +115,7 @@
               <td><strong><?= esc(++$loop_count) ?></strong></td>
               <td class="capitalize"><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= esc($product->product_name) ?></strong></td>
               <td><span class="badge bg-label-primary me-1"><?= $product->category_name ?></span></td>
-              <td><?= $product->price?></td>
+              <td><?= $product->price ?></td>
               <td>
                 <img style="height:65px;width:60px" src="/uploads/<?= $product->image ?>" alt="" srcset="">
               </td>
@@ -139,6 +140,7 @@
                       <div class="modal-body">
                         <div class="card-body">
                           <form method="post" action="<?= base_url('product/update/' . $id) ?>" enctype="multipart/form-data">
+                            <?= csrf_field() ?>
                             <div class="row mb-3">
                               <label class="col-sm-2 col-form-label" for="basic-default-name">Product Name</label>
                               <div class="col-sm-10">

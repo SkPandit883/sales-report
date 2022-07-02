@@ -12,6 +12,7 @@ class ProductController extends BaseController
     public function __construct()
     {
         $this->Product = new Product();
+        helper(['form', 'url']);
     }
     public function index()
     {
@@ -21,15 +22,17 @@ class ProductController extends BaseController
     }
     public function store()
     {
-        helper(['form', 'url']);
-        $validation = \Config\Services::validation();
-        $check = $this->validate([
-            'category_id' => 'required|integer',
-            'name' => 'required|string',
-            'price' => 'required|integer',
-            'image' => 'required|is_image[image]'
-        ]);
-        if (!$check)  return redirect()->back()->with('validation', $this->validator->getErrors());
+        $rules = [
+            'category_id' => ['required', 'integer'],
+            'name' => ['required', 'string'],
+            'price' => ['required', 'integer'],
+            'image' => [
+                'uploaded[image]',
+                'mime_in[image,image/jpg,image/jpeg,image/gif,image/png]',
+                'max_size[image,4096]',
+            ],
+        ];
+        if (!$this->validate($rules))  return redirect()->back()->with('validation', $this->validator->getErrors());
         $this->Product->insert([
             'category_id' => $this->request->getPost('category_id'),
             'name' => $this->request->getPost('name'),
@@ -48,19 +51,16 @@ class ProductController extends BaseController
             'description' => $this->request->getPost('description'),
         ];
         $file = $this->request->getFile('image');
-        $validation_rule = [
-            'category_id' => 'required|integer',
-            'name' => 'required|string',
-            'price' => 'required|integer',
+        $rules = [
+            'category_id' => ['required', 'integer'],
+            'name' => ['required', 'string'],
+            'price' => ['required', 'integer'],
+
         ];
-        if ($file) {
-            dd('yes');
+        if ($file->isValid()) {
             $data['image'] = FileUploader::upload($file, 'uploads');
-            $validation_rule['image'] = 'is_image[image]';
         }
-        dd('no');
-        $check = $this->validate($validation_rule);
-        if (!$check)  return redirect()->back()->with('validation', $this->validator->getErrors());
+        if (!$this->validate($rules))  return redirect()->back()->with('validation', $this->validator->getErrors());
         $this->Product->update($id, $data);
         return redirect()->back()->with('success', 'Successfully product updated ');
     }
