@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Controllers\SalesController;
 use App\Controllers\ProductController;
 use App\Controllers\CategoryController;
 
@@ -46,9 +47,12 @@ $routes->post('category/update/(:num)',[CategoryController::class,'update']);
 $routes->get('category/delete/(:num)',[CategoryController::class,'destroy']);
 
 $routes->get('product',[ProductController::class,'index']);
-$routes->get('post',[ProductController::class,'store']);
-$routes->post('product/(:num)/update',[ProductController::class,'update']);
-$routes->get('product/(:num)/delete',[ProductController::class,'destroy']);
+$routes->post('product',[ProductController::class,'store']);
+$routes->post('product/update/(:num)',[ProductController::class,'update']);
+$routes->get('product/delete/(:num)',[ProductController::class,'destroy']);
+
+$routes->get('sales/report/product',[SalesController::class,'productReport']);
+$routes->get('sales/report/category',[SalesController::class,'categoryReport']);
 
 /*
  * --------------------------------------------------------------------

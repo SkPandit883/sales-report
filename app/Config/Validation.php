@@ -41,4 +41,16 @@ class Validation extends BaseConfig
     //--------------------------------------------------------------------
     // Rules
     //--------------------------------------------------------------------
+
+    public $productUpdated=[
+        'category_id'=>'required|integer',
+        'name'=>'required|string',
+        'price'=>'required|integer'
+    ]; 
+    public $productStore=[
+        'category_id'=>'required|integer',
+        'name'=>'required|string',
+        'price'=>'required|integer',
+        'image'=>'required|is_image'
+    ];
 }

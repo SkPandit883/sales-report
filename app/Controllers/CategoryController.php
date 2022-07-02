@@ -17,14 +17,21 @@ class CategoryController extends BaseController
     }
     public function store()
     {
+        $this->Category->insert([
+            'name'=>$this->request->getPost('category')
+        ]);
+        return redirect()->back()->with('success', 'Category Created Successfully');
     }
     public function update($id)
     {
-        dd($id);
-        return "category-update-$id";
+        $this->Category->update($id,[
+            'name'=>$this->request->getPost('category')
+        ]);
+        return redirect()->back()->with('success', 'Category  Successfully Updated');
     }
     public function destroy($id)
     {
-        return "category-destroy-$id";
+        $this->Category->delete($id);
+        return redirect()->back()->with('success','Successfully removed category');
     }
 }

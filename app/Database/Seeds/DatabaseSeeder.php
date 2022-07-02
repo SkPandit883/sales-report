@@ -2,7 +2,7 @@
 
 namespace App\Database\Seeds;
 
-use App\Models\Cart;
+use App\Models\Sale;
 use App\Models\Product;
 use App\Models\Category;
 use CodeIgniter\Database\Seeder;
@@ -13,46 +13,46 @@ class DatabaseSeeder extends Seeder
     {
         $Product = new Product();
         $Category = new Category();
-        $Cart = new Cart();
+        $Sale = new Sale();
         $categories = [
             ['category' => 'fruit', 'items' => [
-                ['name' => 'apple', 'price' => 12.99, 'image' => 'image', 'description' => 'apple'],
-                ['name' => 'banana', 'price' => 12, 'image' => 'image', 'description' => 'banana'],
-                ['name' => 'orange', 'price' => 1212, 'image' => 'image', 'description' => 'orange'],
-                ['name' => 'grapes', 'price' => 219, 'image' => 'image', 'description' => 'grapes'],
+                ['name' => 'apple', 'price' => 12.99, 'image' => 'dummy.png', 'description' => 'apple'],
+                ['name' => 'banana', 'price' => 12, 'image' => 'dummy.png', 'description' => 'banana'],
+                ['name' => 'orange', 'price' => 1212, 'image' => 'dummy.png', 'description' => 'orange'],
+                ['name' => 'grapes', 'price' => 219, 'image' => 'dummy.png', 'description' => 'grapes'],
             ]],
             ['category' => 'lifestyle', 'items' => [
-                ['name' => 'shoes', 'price' => 199, 'image' => 'image', 'description' => 'shoes'],
-                ['name' => 'slipper', 'price' => 19, 'image' => 'image', 'description' => 'slipper'],
-                ['name' => 'cap', 'price' => 1221, 'image' => 'image', 'description' => 'cap'],
-                ['name' => 'glass', 'price' => 1299, 'image' => 'image', 'description' => 'glass'],
+                ['name' => 'shoes', 'price' => 199, 'image' => 'dummy.png', 'description' => 'shoes'],
+                ['name' => 'slipper', 'price' => 19, 'image' => 'dummy.png', 'description' => 'slipper'],
+                ['name' => 'cap', 'price' => 1221, 'image' => 'dummy.png', 'description' => 'cap'],
+                ['name' => 'glass', 'price' => 1299, 'image' => 'dummy.png', 'description' => 'glass'],
 
             ]],
             ['category' => 'electronic', 'items' => [
-                ['name' => 'phone', 'price' => 129, 'image' => 'image', 'description' => 'phone'],
-                ['name' => 'heater', 'price' => 1129, 'image' => 'image', 'description' => 'heater'],
-                ['name' => 'washing machine', 'price' => 1219, 'image' => 'image', 'description' => 'washing machine'],
-                ['name' => 'iron', 'price' => 119, 'image' => 'image', 'description' => 'iron'],
+                ['name' => 'phone', 'price' => 129, 'image' => 'dummy.png', 'description' => 'phone'],
+                ['name' => 'heater', 'price' => 1129, 'image' => 'dummy.png', 'description' => 'heater'],
+                ['name' => 'washing machine', 'price' => 1219, 'dummy.png' => 'image', 'description' => 'washing machine'],
+                ['name' => 'iron', 'price' => 119, 'image' => 'dummy.png', 'description' => 'iron'],
 
             ]],
             ['category' => 'stationery', 'items' => [
-                ['name' => 'book', 'price' => 99, 'image' => 'image', 'description' => 'book'],
-                ['name' => 'pen', 'price' => 12, 'image' => 'image', 'description' => 'pen'],
-                ['name' => 'copy', 'price' => 119, 'image' => 'image', 'description' => 'copy'],
-                ['name' => 'journal', 'price' => 129, 'image' => 'image', 'description' => 'journal'],
+                ['name' => 'book', 'price' => 99, 'image' => 'dummy.png', 'description' => 'book'],
+                ['name' => 'pen', 'price' => 12, 'image' => 'dummy.png', 'description' => 'pen'],
+                ['name' => 'copy', 'price' => 119, 'image' => 'dummy.png', 'description' => 'copy'],
+                ['name' => 'journal', 'price' => 129, 'image' => 'dummy.png', 'description' => 'journal'],
 
             ]],
             ['category' => 'home applience', 'items' => [
-                ['name' => 'heater', 'price' => 129, 'image' => 'image', 'description' => 'heater'],
-                ['name' => 'fan', 'price' => 11, 'image' => 'image', 'description' => 'fan'],
-                ['name' => 'spray', 'price' => 12.99, 'image' => 'image', 'description' => 'spray'],
+                ['name' => 'heater', 'price' => 129, 'image' => 'dummy.png', 'description' => 'heater'],
+                ['name' => 'fan', 'price' => 11, 'image' => 'dummy.png', 'description' => 'fan'],
+                ['name' => 'spray', 'price' => 12.99, 'image' => 'dummy.png', 'description' => 'spray'],
 
             ]],
             ['category' => 'beauty', 'items' => [
-                ['name' => 'soap', 'price' => 12.19, 'image' => 'image', 'description' => 'soap'],
-                ['name' => 'shampoo', 'price' => 12.22, 'image' => 'image', 'description' => 'shampoo'],
-                ['name' => 'facewash', 'price' => 129, 'image' => 'image', 'description' => 'facewash'],
-                ['name' => 'conditioner', 'price' => 19, 'image' => 'image', 'description' => 'conditioner'],
+                ['name' => 'soap', 'price' => 12.19, 'image' => 'dummy.png', 'description' => 'soap'],
+                ['name' => 'shampoo', 'price' => 12.22, 'image' => 'dummy.png', 'description' => 'shampoo'],
+                ['name' => 'facewash', 'price' => 129, 'image' => 'dummy.png', 'description' => 'facewash'],
+                ['name' => 'conditioner', 'price' => 19, 'image' => 'dummy.png', 'description' => 'conditioner'],
 
             ]],
         ];
@@ -73,11 +73,10 @@ class DatabaseSeeder extends Seeder
                 $product_id = $Product->getInsertID();
                 if($count<2){
                     //add two products of each category
-                    $Cart->insert([
+                    $Sale->insert([
                         'product_id'=>$product_id,
                         'num_of_items'=>rand(1,3),
                         'item_per_price'=>$product['price'],
-                        'status'=>array_rand(['shopping','pending','checkout','delivered','default'=>'shoping'])
                     ]);
                     $count++;
                 }

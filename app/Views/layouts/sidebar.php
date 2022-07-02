@@ -88,13 +88,7 @@
                 <div data-i18n="Analytics">Products</div>
               </a>
             </li> 
-            <li class="menu-item ">
-              <a href="index.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bxl-deezer"></i>
-                
-                <div data-i18n="Analytics">Sales</div>
-              </a>
-            </li>
+          
 
             <!-- Layouts -->
             <li class="menu-item">
@@ -105,12 +99,12 @@
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
+                  <a href="<?=base_url('sales/report/product')?>" class="menu-link">
                     <div data-i18n="Without menu">Products</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                  <a href="<?=base_url('sales/report/category')?>" class="menu-link">
                     <div data-i18n="Without navbar">Category</div>
                   </a>
                 </li>

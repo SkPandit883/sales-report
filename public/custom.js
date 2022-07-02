@@ -1,5 +1,6 @@
 var Swal = require('sweetalert2')
 function deleteRow(url) {
+    console.log(url);
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: 'btn btn-success',
@@ -30,7 +31,7 @@ function deleteRow(url) {
         ) {
             swalWithBootstrapButtons.fire(
                 'Cancelled',
-                'Your imaginary file is safe :)',
+                'Your data is safe :)',
                 'error'
             )
         }

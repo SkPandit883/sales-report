@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1656763049;_ci_previous_url|s:39:"http://localhost:8080/index.php/product";validation|a:3:{s:4:"name";s:27:"The name field is required.";s:5:"price";s:28:"The price field is required.";s:5:"image";s:28:"The image field is required.";}__ci_vars|a:1:{s:10:"validation";s:3:"old";}
