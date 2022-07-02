@@ -101,7 +101,8 @@
               <button type="button " data-bs-toggle="modal" data-bs-target="#editProductModal">
                 <img  src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/27/646CFC/external-edit-interface-kiranshastry-lineal-kiranshastry.png" />
               </button>
-              <button type="button" class="text-red-500 text-2xl m" onclick="deleteRow('product-1')">
+           
+              <button type="button" class="text-red-500 text-2xl m" onclick="deleteRow('/product/1/delete')">
                 <img src="https://img.icons8.com/ios/26/FF1111/delete-forever--v1.png" />
               </button>
 
@@ -116,7 +117,7 @@
                     </div>
                     <div class="modal-body">
                       <div class="card-body">
-                        <form>
+                        <form method="post" action="<?=base_url("product/1/update") ?>">
                           <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Name</label>
                             <div class="col-sm-10">
@@ -157,7 +158,7 @@
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                               Close
                             </button>
-                            <button type="button" class="btn btn-primary bg-[#696cff]">Save Changes </button>
+                            <button type="submit" class="btn btn-primary bg-[#696cff]">Save Changes </button>
                           </div>
                         </form>
                       </div>

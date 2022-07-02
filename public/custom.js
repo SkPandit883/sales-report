@@ -1,6 +1,5 @@
 var Swal = require('sweetalert2')
-function deleteRow(formId) {
-    console.log(formId);
+function deleteRow(url) {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: 'btn btn-success',
@@ -19,6 +18,7 @@ function deleteRow(formId) {
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
+            location.replace(url)
             swalWithBootstrapButtons.fire(
                 'Deleted!',
                 'Your file has been deleted.',

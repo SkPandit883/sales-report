@@ -2,6 +2,9 @@
 
 namespace Config;
 
+use App\Controllers\ProductController;
+use App\Controllers\CategoryController;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -36,8 +39,16 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('category','CategoryController::index');
-$routes->get('product','ProductController::index');
+
+$routes->get('category',[CategoryController::class,'index']);
+$routes->post('category',[CategoryController::class,'store']);
+$routes->post('category/update/(:num)',[CategoryController::class,'update']);
+$routes->get('category/delete/(:num)',[CategoryController::class,'destroy']);
+
+$routes->get('product',[ProductController::class,'index']);
+$routes->get('post',[ProductController::class,'store']);
+$routes->post('product/(:num)/update',[ProductController::class,'update']);
+$routes->get('product/(:num)/delete',[ProductController::class,'destroy']);
 
 /*
  * --------------------------------------------------------------------

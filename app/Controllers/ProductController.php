@@ -8,4 +8,15 @@ class ProductController extends BaseController
     {
         return view('product/index');
     }
+    public function store()
+    {
+    }
+    public function update($id)
+    {
+        return "product-update-$id";
+    }
+    public function destroy($id)
+    {
+        return "product-destroy-$id";
+    }
 }
