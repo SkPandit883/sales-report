@@ -39,4 +39,8 @@ class Product extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    public function findAllWithCategory(){
+        $result = $this->db->table('products')->select('products.id as id, products.name as product_name,price,image,description,categories.name as category_name')->join('categories', 'products.category_id = categories.id')->get()->getResult();
+        return $result;
+    }
 }

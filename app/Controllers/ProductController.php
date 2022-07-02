@@ -16,7 +16,7 @@ class ProductController extends BaseController
     public function index()
     {
         $category = new Category();
-        $data = ['products' => $this->Product->findAll(), 'categories' => $category->findAll()];
+        $data = ['products' => $this->Product->findAllWithCategory(), 'categories' => $category->findAll()];
         return view('product/index', $data);
     }
     public function store()

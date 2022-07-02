@@ -109,16 +109,16 @@
         <tbody class="table-border-bottom-0">
           <?php $loop_count = 0; ?>
           <?php foreach ($products as $key => $product) : ?>
-            <?php $id = $product['id']; ?>
+            <?php $id = $product->id; ?>
             <tr>
               <td><strong><?= esc(++$loop_count) ?></strong></td>
-              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= esc($product['name']) ?></strong></td>
-              <td><?= $product['category_id'] ?></td>
-              <td><?= $product['price'] ?></td>
+              <td class="capitalize"><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= esc($product->product_name) ?></strong></td>
+              <td><span class="badge bg-label-primary me-1"><?= $product->category_name ?></span></td>
+              <td><?= $product->price?></td>
               <td>
-                <img style="height:65px;width:60px" src="/uploads/<?= $product['image'] ?>" alt="" srcset="">
+                <img style="height:65px;width:60px" src="/uploads/<?= $product->image ?>" alt="" srcset="">
               </td>
-              <td><span class="badge bg-label-primary me-1"><?= $product['description'] ?></span></td>
+              <td><?= $product->description ?></td>
               <td>
                 <button type="button " data-bs-toggle="modal" data-bs-target='<?php echo "#editProductModal-$id" ?>'>
                   <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/27/646CFC/external-edit-interface-kiranshastry-lineal-kiranshastry.png" />
@@ -142,7 +142,7 @@
                             <div class="row mb-3">
                               <label class="col-sm-2 col-form-label" for="basic-default-name">Product Name</label>
                               <div class="col-sm-10">
-                                <input type="text" class="form-control" name="name" id="basic-default-name" value="<?= $product['name'] ?>" placeholder="apple" />
+                                <input type="text" class="form-control" name="name" id="basic-default-name" value="<?= $product->product_name ?>" placeholder="apple" />
                               </div>
                             </div>
                             <div class="row mb-3">
@@ -159,7 +159,7 @@
                             <div class="row mb-3">
                               <label class="col-sm-2 col-form-label" for="basic-default-phone"> Price</label>
                               <div class="col-sm-10">
-                                <input type="number" value="<?= $product['price'] ?>" name="price" id="basic-default-phone" class="form-control phone-mask" placeholder="1200" aria-label="658 799 8941" aria-describedby="basic-default-phone" />
+                                <input type="number" value="<?= $product->price ?>" name="price" id="basic-default-phone" class="form-control phone-mask" placeholder="1200" aria-label="658 799 8941" aria-describedby="basic-default-phone" />
                               </div>
                             </div>
                             <div class="row mb-3">
@@ -171,7 +171,7 @@
                             <div class="row mb-3">
                               <label class="col-sm-2 col-form-label" for="basic-default-message">Description</label>
                               <div class="col-sm-10">
-                                <textarea id="basic-default-message" name="description" class="form-control" placeholder="Description about products" aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2"><?= $product['description'] ?></textarea>
+                                <textarea id="basic-default-message" name="description" class="form-control" placeholder="Description about products" aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2"><?= $product->description ?></textarea>
                               </div>
                             </div>
 
