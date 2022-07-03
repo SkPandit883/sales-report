@@ -13,7 +13,6 @@
 
         <div class="flex flex-row items-center justify-between">
             <h5 class="card-header text-xl uppercase"> Category wise sales reports </h5>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#addProductModal" class="btn btn-primary bg-[#696cff] mr-10">Add</button>
         </div>
         <div class="table-responsive text-nowrap">
             <table class="table">

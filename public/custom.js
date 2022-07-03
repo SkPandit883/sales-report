@@ -3,8 +3,8 @@ function deleteRow(url) {
     console.log(url);
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
+            confirmButton: 'btn btn-success bg-[#696cff] ml-8 hover:bg-[#696cff]',
+            cancelButton: 'btn btn-danger bg-red-600 mr-5'
         },
         buttonsStyling: false
     })

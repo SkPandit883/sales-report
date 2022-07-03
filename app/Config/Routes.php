@@ -40,19 +40,26 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->group('category',static function($routes){
+    $routes->get('/',[CategoryController::class,'index']);
+    $routes->post('/',[CategoryController::class,'store']);
+    $routes->post('update/(:num)',[CategoryController::class,'update']);
+    $routes->get('delete/(:num)',[CategoryController::class,'destroy']);
+});
 
-$routes->get('category',[CategoryController::class,'index']);
-$routes->post('category',[CategoryController::class,'store']);
-$routes->post('category/update/(:num)',[CategoryController::class,'update']);
-$routes->get('category/delete/(:num)',[CategoryController::class,'destroy']);
+$routes->group('product',static function($routes){
+    $routes->get('/',[ProductController::class,'index']);
+    $routes->post('/',[ProductController::class,'store']);
+    $routes->post('update/(:num)',[ProductController::class,'update']);
+    $routes->get('delete/(:num)',[ProductController::class,'destroy']);
+});
 
-$routes->get('product',[ProductController::class,'index']);
-$routes->post('product',[ProductController::class,'store']);
-$routes->post('product/update/(:num)',[ProductController::class,'update']);
-$routes->get('product/delete/(:num)',[ProductController::class,'destroy']);
+$routes->group('sales/report',static function($routes){
+    $routes->get('/product',[SalesController::class,'productReport']);
+    $routes->get('/category',[SalesController::class,'categoryReport']);
+});
 
-$routes->get('sales/report/product',[SalesController::class,'productReport']);
-$routes->get('sales/report/category',[SalesController::class,'categoryReport']);
+service('auth')->routes($routes);
 
 /*
  * --------------------------------------------------------------------
