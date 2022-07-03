@@ -55,8 +55,8 @@ $routes->group('product',static function($routes){
 });
 
 $routes->group('sales/report',static function($routes){
-    $routes->get('/product',[SalesController::class,'productReport']);
-    $routes->get('/category',[SalesController::class,'categoryReport']);
+    $routes->get('product',[SalesController::class,'productReport']);
+    $routes->get('category',[SalesController::class,'categoryReport']);
 });
 
 service('auth')->routes($routes);

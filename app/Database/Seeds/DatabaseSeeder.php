@@ -5,6 +5,7 @@ namespace App\Database\Seeds;
 use App\Models\Sale;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\SalesDetail;
 use CodeIgniter\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $Product = new Product();
         $Category = new Category();
         $Sale = new Sale();
+        $SalesDetail =new SalesDetail();
         $categories = [
             ['category' => 'fruit', 'items' => [
                 ['name' => 'apple', 'price' => 12.99, 'image' => 'dummy.png', 'description' => 'apple'],
@@ -60,6 +62,8 @@ class DatabaseSeeder extends Seeder
             //save items
             $Category->insert(['name' => $category['category']]);
             $category_id = $Category->getInsertID();
+            $Sale->insert(['customer' =>"customer-$key"]);
+            $sales_id=$Sale->getInsertID();
             $count=0;
             foreach ($category['items'] as $key => $product) {
                 //save product
@@ -72,8 +76,9 @@ class DatabaseSeeder extends Seeder
                 ]);
                 $product_id = $Product->getInsertID();
                 if($count<2){
-                    //add two products of each category
-                    $Sale->insert([
+                    //add two products of each category to sales
+                    $SalesDetail->insert([
+                        'sales_id'=>$sales_id,
                         'product_id'=>$product_id,
                         'num_of_items'=>rand(1,3),
                         'item_per_price'=>$product['price'],
