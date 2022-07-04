@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             ['category' => 'electronic', 'items' => [
                 ['name' => 'phone', 'price' => 129, 'image' => 'dummy.png', 'description' => 'phone'],
                 ['name' => 'heater', 'price' => 1129, 'image' => 'dummy.png', 'description' => 'heater'],
-                ['name' => 'washing machine', 'price' => 1219, 'dummy.png' => 'image', 'description' => 'washing machine'],
+                ['name' => 'washing machine', 'price' => 1219,'image'=> 'dummy.png', 'description' => 'washing machine'],
                 ['name' => 'iron', 'price' => 119, 'image' => 'dummy.png', 'description' => 'iron'],
 
             ]],

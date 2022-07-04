@@ -11,6 +11,9 @@ class SalesController extends BaseController
     public function __construct(){
         $this->Sale=new Sale();
     }
+    public function sales(){
+        dd($this->Sale->sales());
+    }
     public function productReport()
     {
         $data=['productReports'=>$this->Sale->productReport()];

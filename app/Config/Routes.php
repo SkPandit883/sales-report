@@ -40,26 +40,27 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->group('category',static function($routes){
-    $routes->get('/',[CategoryController::class,'index']);
-    $routes->post('/',[CategoryController::class,'store']);
-    $routes->post('update/(:num)',[CategoryController::class,'update']);
-    $routes->get('delete/(:num)',[CategoryController::class,'destroy']);
+$routes->group('category', static function ($routes) {
+    $routes->get('/', [CategoryController::class, 'index']);
+    $routes->post('/', [CategoryController::class, 'store']);
+    $routes->post('update/(:num)', [CategoryController::class, 'update']);
+    $routes->get('delete/(:num)', [CategoryController::class, 'destroy']);
 });
 
-$routes->group('product',static function($routes){
-    $routes->get('/',[ProductController::class,'index']);
-    $routes->post('/',[ProductController::class,'store']);
-    $routes->post('update/(:num)',[ProductController::class,'update']);
-    $routes->get('delete/(:num)',[ProductController::class,'destroy']);
+$routes->group('product', static function ($routes) {
+    $routes->get('/', [ProductController::class, 'index']);
+    $routes->post('/', [ProductController::class, 'store']);
+    $routes->post('update/(:num)', [ProductController::class, 'update']);
+    $routes->get('delete/(:num)', [ProductController::class, 'destroy']);
+});
+$routes->group('sales', static function ($routes) {
+    $routes->get('/', [SalesController::class, 'sales']);
+    $routes->group('report', static function ($routes) {
+        $routes->get('product', [SalesController::class, 'productReport']);
+        $routes->get('category', [SalesController::class, 'categoryReport']);
+    });
 });
 
-$routes->group('sales/report',static function($routes){
-    $routes->get('product',[SalesController::class,'productReport']);
-    $routes->get('category',[SalesController::class,'categoryReport']);
-});
-
-service('auth')->routes($routes);
 
 /*
  * --------------------------------------------------------------------
@@ -77,4 +78,3 @@ service('auth')->routes($routes);
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
-

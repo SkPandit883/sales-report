@@ -39,4 +39,9 @@ class Category extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function productCount(){
+        $sql="SELECT categories.name ,COUNT(products.id) as count FROM categories JOIN products ON categories.id=products.category_id GROUP BY categories.id";
+        return $this->db->query($sql)->getResult();
+    }
 }

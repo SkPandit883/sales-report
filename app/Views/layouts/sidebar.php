@@ -68,9 +68,9 @@
 
           <div class="menu-inner-shadow"></div>
 
-          <ul class="menu-inner py-1">
+          <ul class="menu-inner py-1 nav_buttons">
             <!-- Dashboard -->
-            <li class="menu-item active">
+            <li class="menu-item ">
               <a href="/" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -86,6 +86,12 @@
               <a href="/product" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-spreadsheet"></i>
                 <div data-i18n="Analytics">Products</div>
+              </a>
+            </li>  
+            <li class="menu-item">
+              <a href="/sales" class="menu-link">
+                <i class="menu-icon tf-icons bx bxl-deezer"></i>
+                <div data-i18n="Analytics">Sales</div>
               </a>
             </li> 
           

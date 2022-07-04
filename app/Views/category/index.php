@@ -29,7 +29,7 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                             <div class="col-sm-8 space-x-6 d-flex">
                                 <input required type="text" class="form-control" id="basic-default-name" placeholder="Fruit" name="category" />
-                                <button type="submit" class="btn btn-primary bg-[#696cff]">Send</button>
+                                <button type="submit" class="btn btn-primary bg-[#696cff]">Add</button>
 
                             </div>
                         </div>
