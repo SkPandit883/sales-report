@@ -1,138 +1,138 @@
-#--------------------------------------------------------------------
-# Example Environment Configuration file
-#
-# This file can be used as a starting point for your own
-# custom .env files, and contains most of the possible settings
-# available in a default install.
-#
-# By default, all of the settings are commented out. If you want
-# to override the setting, you must un-comment it by removing the '#'
-# at the beginning of the line.
-#--------------------------------------------------------------------
+<!-- --------------------------------------------------------------------
+Example Environment Configuration file
 
-#--------------------------------------------------------------------
-# ENVIRONMENT
-#--------------------------------------------------------------------
+This file can be used as a starting point for your own
+custom .env files, and contains most of the possible settings
+available in a default install.
 
-# CI_ENVIRONMENT = production
+By default, all of the settings are commented out. If you want
+to override the setting, you must un-comment it by removing the '#'
+at the beginning of the line.
+--------------------------------------------------------------------
 
-#--------------------------------------------------------------------
-# APP
-#--------------------------------------------------------------------
+--------------------------------------------------------------------
+ENVIRONMENT
+--------------------------------------------------------------------
 
-# app.baseURL = ''
-# If you have trouble with `.`, you could also use `_`.
-# app_baseURL = ''
-# app.forceGlobalSecureRequests = false
+CI_ENVIRONMENT = development
 
-# app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
-# app.sessionCookieName = 'ci_session'
-# app.sessionExpiration = 7200
-# app.sessionSavePath = null
-# app.sessionMatchIP = false
-# app.sessionTimeToUpdate = 300
-# app.sessionRegenerateDestroy = false
+--------------------------------------------------------------------
+APP
+--------------------------------------------------------------------
 
-# app.CSPEnabled = false
+app.baseURL = 'http://localhost:8080'
+If you have trouble with `.`, you could also use `_`.
+app_baseURL = ''
+app.forceGlobalSecureRequests = false
 
-#--------------------------------------------------------------------
-# DATABASE
-#--------------------------------------------------------------------
+app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
+app.sessionCookieName = 'ci_session'
+app.sessionExpiration = 7200
+app.sessionSavePath = null
+app.sessionMatchIP = false
+app.sessionTimeToUpdate = 300
+app.sessionRegenerateDestroy = false
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
-# database.default.DBPrefix =
+app.CSPEnabled = false
 
-# database.tests.hostname = localhost
-# database.tests.database = ci4
-# database.tests.username = root
-# database.tests.password = root
-# database.tests.DBDriver = MySQLi
-# database.tests.DBPrefix =
+--------------------------------------------------------------------
+DATABASE
+--------------------------------------------------------------------
 
-#--------------------------------------------------------------------
-# CONTENT SECURITY POLICY
-#--------------------------------------------------------------------
+database.default.hostname = localhost
+database.default.database = sales_management
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
 
-# contentsecuritypolicy.reportOnly = false
-# contentsecuritypolicy.defaultSrc = 'none'
-# contentsecuritypolicy.scriptSrc = 'self'
-# contentsecuritypolicy.styleSrc = 'self'
-# contentsecuritypolicy.imageSrc = 'self'
-# contentsecuritypolicy.baseURI = null
-# contentsecuritypolicy.childSrc = null
-# contentsecuritypolicy.connectSrc = 'self'
-# contentsecuritypolicy.fontSrc = null
-# contentsecuritypolicy.formAction = null
-# contentsecuritypolicy.frameAncestors = null
-# contentsecuritypolicy.frameSrc = null
-# contentsecuritypolicy.mediaSrc = null
-# contentsecuritypolicy.objectSrc = null
-# contentsecuritypolicy.pluginTypes = null
-# contentsecuritypolicy.reportURI = null
-# contentsecuritypolicy.sandbox = false
-# contentsecuritypolicy.upgradeInsecureRequests = false
-# contentsecuritypolicy.styleNonceTag = '{csp-style-nonce}'
-# contentsecuritypolicy.scriptNonceTag = '{csp-script-nonce}'
-# contentsecuritypolicy.autoNonce = true
+database.tests.hostname = localhost
+database.tests.database = ci4
+database.tests.username = root
+database.tests.password = root
+database.tests.DBDriver = MySQLi
+database.tests.DBPrefix =
 
-#--------------------------------------------------------------------
-# COOKIE
-#--------------------------------------------------------------------
+--------------------------------------------------------------------
+CONTENT SECURITY POLICY
+--------------------------------------------------------------------
 
-# cookie.prefix = ''
-# cookie.expires = 0
-# cookie.path = '/'
-# cookie.domain = ''
-# cookie.secure = false
-# cookie.httponly = false
-# cookie.samesite = 'Lax'
-# cookie.raw = false
+contentsecuritypolicy.reportOnly = false
+contentsecuritypolicy.defaultSrc = 'none'
+contentsecuritypolicy.scriptSrc = 'self'
+contentsecuritypolicy.styleSrc = 'self'
+contentsecuritypolicy.imageSrc = 'self'
+contentsecuritypolicy.baseURI = null
+contentsecuritypolicy.childSrc = null
+contentsecuritypolicy.connectSrc = 'self'
+contentsecuritypolicy.fontSrc = null
+contentsecuritypolicy.formAction = null
+contentsecuritypolicy.frameAncestors = null
+contentsecuritypolicy.frameSrc = null
+contentsecuritypolicy.mediaSrc = null
+contentsecuritypolicy.objectSrc = null
+contentsecuritypolicy.pluginTypes = null
+contentsecuritypolicy.reportURI = null
+contentsecuritypolicy.sandbox = false
+contentsecuritypolicy.upgradeInsecureRequests = false
+contentsecuritypolicy.styleNonceTag = '{csp-style-nonce}'
+contentsecuritypolicy.scriptNonceTag = '{csp-script-nonce}'
+contentsecuritypolicy.autoNonce = true
 
-#--------------------------------------------------------------------
-# ENCRYPTION
-#--------------------------------------------------------------------
+--------------------------------------------------------------------
+COOKIE
+--------------------------------------------------------------------
 
-# encryption.key =
-# encryption.driver = OpenSSL
-# encryption.blockSize = 16
-# encryption.digest = SHA512
+cookie.prefix = ''
+cookie.expires = 0
+cookie.path = '/'
+cookie.domain = ''
+cookie.secure = false
+cookie.httponly = false
+cookie.samesite = 'Lax'
+cookie.raw = false
 
-#--------------------------------------------------------------------
-# HONEYPOT
-#--------------------------------------------------------------------
+--------------------------------------------------------------------
+ENCRYPTION
+--------------------------------------------------------------------
 
-# honeypot.hidden = 'true'
-# honeypot.label = 'Fill This Field'
-# honeypot.name = 'honeypot'
-# honeypot.template = '<label>{label}</label><input type="text" name="{name}" value=""/>'
-# honeypot.container = '<div style="display:none">{template}</div>'
+encryption.key =
+encryption.driver = OpenSSL
+encryption.blockSize = 16
+encryption.digest = SHA512
 
-#--------------------------------------------------------------------
-# SECURITY
-#--------------------------------------------------------------------
+--------------------------------------------------------------------
+HONEYPOT
+--------------------------------------------------------------------
 
-# security.csrfProtection = 'cookie'
-# security.tokenRandomize = false
-# security.tokenName = 'csrf_token_name'
-# security.headerName = 'X-CSRF-TOKEN'
-# security.cookieName = 'csrf_cookie_name'
-# security.expires = 7200
-# security.regenerate = true
-# security.redirect = true
-# security.samesite = 'Lax'
+honeypot.hidden = 'true'
+honeypot.label = 'Fill This Field'
+honeypot.name = 'honeypot'
+honeypot.template = '<label>{label}</label><input type="text" name="{name}" value=""/>'
+honeypot.container = '<div style="display:none">{template}</div>'
 
-#--------------------------------------------------------------------
-# LOGGER
-#--------------------------------------------------------------------
+--------------------------------------------------------------------
+SECURITY
+--------------------------------------------------------------------
 
-# logger.threshold = 4
+security.csrfProtection = 'cookie'
+security.tokenRandomize = false
+security.tokenName = 'csrf_token_name'
+security.headerName = 'X-CSRF-TOKEN'
+security.cookieName = 'csrf_cookie_name'
+security.expires = 7200
+security.regenerate = true
+security.redirect = true
+security.samesite = 'Lax'
 
-#--------------------------------------------------------------------
-# CURLRequest
-#--------------------------------------------------------------------
+--------------------------------------------------------------------
+LOGGER
+--------------------------------------------------------------------
 
-# curlrequest.shareOptions = true
+logger.threshold = 4
+
+--------------------------------------------------------------------
+CURLRequest
+--------------------------------------------------------------------
+
+curlrequest.shareOptions = true -->
