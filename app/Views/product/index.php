@@ -152,7 +152,7 @@
                               <div class="col-sm-10">
                                 <select id="defaultSelect" name="category_id" class="form-select">
                                   <?php foreach ($categories as $category) : ?>
-                                    <option value="<?= esc($category['id']) ?>"><?= esc($category['name']) ?></option>
+                                    <option <?php echo ($category['id'] == $product->category_id) ?'selected':''; ?> value="<?= esc($category['id']) ?>"><?= esc($category['name']) ?></option>
                                   <?php endforeach ?>
                                 </select>
                               </div>
