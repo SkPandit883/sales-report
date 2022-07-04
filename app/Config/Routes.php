@@ -60,8 +60,6 @@ $routes->group('sales', static function ($routes) {
         $routes->get('category', [SalesController::class, 'categoryReport']);
     });
 });
-
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing
